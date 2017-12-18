@@ -44,7 +44,8 @@ __RCSID("$NetBSD: fenv.c,v 1.2 2014/12/27 17:52:45 martin Exp $");
 
 const fenv_t __fe_dfl_env = {
 	.__fpsr = 0,
-	.__fpcr = FPCR_FZ|FPCR_DN|FPCR_RN,
+	/* .__fpcr = FPCR_FZ|FPCR_DN|FPCR_RN, */
+	.__fpcr = __BIT(24) | __BIT(25) | 0,
 };
 
 /*
